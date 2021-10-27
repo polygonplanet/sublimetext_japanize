@@ -47,6 +47,7 @@
             },
             {
                 "caption": "文字エンコードを指定して開き直す",
+                "id": "reopen_with_encoding",
                 "children":
                 [
                     { "caption": "UTF-8", "command": "reopen", "args": {"encoding": "utf-8" } },
@@ -90,6 +91,7 @@
             { "command": "save", "args": {"async": true}, "caption": "上書き保存(S)", "mnemonic": "S" },
             {
                 "caption": "文字エンコードを指定して上書き保存",
+                "id": "save_with_encoding",
                 "children":
                 [
                     { "caption": "UTF-8", "command": "save", "args": { "async": true, "encoding": "utf-8" } },
@@ -329,7 +331,8 @@
             { "command": "expand_selection", "args": {"to": "smart"}, "caption": "選択範囲拡張" },
             { "command": "expand_selection", "args": {"to": "line"}, "caption": "選択範囲拡張[行単位]" },
             { "command": "find_under_expand", "caption": "選択範囲拡張[単語単位]" },
-            { "command": "expand_selection_to_paragraph", "caption": "選択範囲拡張[段落単位]" },
+            { "command": "expand_selection_to_paragraph", "caption": "選択範囲拡張[ブロック単位]" },
+            { "command": "expand_selection_to_paragraph", "args": {"markup_aware": true}, "caption": "選択範囲拡張[段落単位]" },
             { "command": "expand_selection", "args": {"to": "scope"}, "caption": "選択範囲拡張[スコープ単位]" },
             { "command": "expand_selection", "args": {"to": "brackets"}, "caption": "選択範囲拡張[括弧単位]" },
             { "command": "expand_selection", "args": {"to": "indentation"}, "caption": "選択範囲拡張[インデント単位]" },
@@ -952,7 +955,7 @@
             { "command": "show_license_window", "caption": "ライセンス登録" },
             { "command": "remove_license", "caption": "ライセンス削除" },
             { "caption": "-" },
-            { "command": "update_check", "caption": "アップデートを確認…", "platform": "!Linux" },
+            { "command": "update_check", "caption": "アップデートを確認…" },
             { "command": "show_changelog", "caption": "変更履歴…" },
             { "command": "show_about_window", "caption": "Sublime Textについて(A)", "mnemonic": "A" }
         ]

@@ -1,6 +1,7 @@
 [
     {
         "caption": "文字エンコードを設定",
+        "id": "set_encoding",
         "children":
         [
             { "caption": "UTF-8", "command": "set_encoding", "args": {"encoding": "utf-8" } },
@@ -43,6 +44,7 @@
 
     {
         "caption": "文字エンコードを指定して開き直す",
+        "id": "reopen_with_encoding",
         "children":
         [
             { "caption": "UTF-8", "command": "reopen", "args": {"encoding": "utf-8" } },
