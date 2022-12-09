@@ -76,6 +76,7 @@
                     { "caption": "ヘブライ語 (ISO 8859-8)", "command": "reopen", "args": { "encoding": "Hebrew (ISO 8859-8)" } },
                     { "caption": "ヘブライ語 (Windows 1255)", "command": "reopen", "args": { "encoding": "Hebrew (Windows 1255)" } },
                     { "caption": "北欧 (ISO 8859-10)", "command": "reopen", "args": { "encoding": "Nordic (ISO 8859-10)" } },
+                    { "caption": "北欧 (Windows 865)", "command": "reopen", "args": { "encoding": "Nordic (Windows 865)" } },
                     { "caption": "ルーマニア語 (ISO 8859-16)", "command": "reopen", "args": { "encoding": "Romanian (ISO 8859-16)" } },
                     { "caption": "トルコ語 (ISO 8859-9)", "command": "reopen", "args": { "encoding": "Turkish (ISO 8859-9)" } },
                     { "caption": "トルコ語 (Windows 1254)", "command": "reopen", "args": { "encoding": "Turkish (Windows 1254)" } },
@@ -125,6 +126,7 @@
                     { "caption": "ヘブライ語 (ISO 8859-8)", "command": "save", "args": { "async": true, "encoding": "Hebrew (ISO 8859-8)" } },
                     { "caption": "ヘブライ語 (Windows 1255)", "command": "save", "args": { "async": true, "encoding": "Hebrew (Windows 1255)" } },
                     { "caption": "北欧 (ISO 8859-10)", "command": "save", "args": { "async": true, "encoding": "Nordic (ISO 8859-10)" } },
+                    { "caption": "北欧 (Windows 865)", "command": "save", "args": { "async": true, "encoding": "Nordic (Windows 865)" } },
                     { "caption": "ルーマニア語 (ISO 8859-16)", "command": "save", "args": { "async": true, "encoding": "Romanian (ISO 8859-16)" } },
                     { "caption": "トルコ語 (ISO 8859-9)", "command": "save", "args": { "async": true, "encoding": "Turkish (ISO 8859-9)" } },
                     { "caption": "トルコ語 (Windows 1254)", "command": "save", "args": { "async": true, "encoding": "Turkish (Windows 1254)" } },
@@ -240,7 +242,7 @@
                     { "command": "set_mark", "caption": "マークを設定" },
                     { "command": "select_to_mark", "caption": "マークまで選択" },
                     { "command": "delete_to_mark", "caption": "マークまで削除 -> yankバッファ" },
-                    { "command": "swap_with_mark", "caption": "カレットとマークを転置" },
+                    { "command": "swap_with_mark", "caption": "キャレットとマークを転置" },
                     { "command": "clear_bookmarks", "args": {"name": "mark"}, "caption": "マークを削除" },
                     { "caption": "-" },
                     { "command": "yank", "caption": "yankバッファをペースト" }
@@ -276,7 +278,11 @@
                     { "command": "title_case", "caption": "タイトル" },
                     { "command": "upper_case", "caption": "大文字" },
                     { "command": "lower_case", "caption": "小文字" },
-                    { "command": "swap_case", "caption": "大文字/小文字反転" }
+                    { "command": "swap_case", "caption": "大文字/小文字反転" },
+                    { "command": "convert_ident_case", "caption": "lowerCamelCase", "args": {"case": "title", "first_case": "lower"} },
+                    { "command": "convert_ident_case", "caption": "UpperCamelCase", "args": {"case": "title"} },
+                    { "command": "convert_ident_case", "caption": "snake_case", "args": {"separator": "_", "case": "lower"} },
+                    { "command": "convert_ident_case", "caption": "kebab-case", "args": {"separator": "-", "case": "lower"} },
                 ]
             },
             {
@@ -328,7 +334,7 @@
         "children":
         [
             { "command": "split_selection_into_lines", "caption": "選択範囲を行単位分割" },
-            { "command": "single_selection", "caption": "カレットの複数化解除" },
+            { "command": "single_selection", "caption": "キャレットの複数化解除" },
             { "caption": "-" },
             { "command": "select_all", "caption": "すべて選択" },
             { "command": "expand_selection", "args": {"to": "smart"}, "caption": "選択範囲拡張" },
@@ -339,10 +345,9 @@
             { "command": "expand_selection", "args": {"to": "scope"}, "caption": "選択範囲拡張[スコープ単位]" },
             { "command": "expand_selection", "args": {"to": "brackets"}, "caption": "選択範囲拡張[括弧単位]" },
             { "command": "expand_selection", "args": {"to": "indentation"}, "caption": "選択範囲拡張[インデント単位]" },
-            { "command": "expand_selection", "args": {"to": "tag"}, "caption": "選択範囲拡張[XMLタグ単位]" },
             { "caption": "-" },
-            { "command": "select_lines", "args": {"forward": false}, "caption": "前行にカレット追加" },
-            { "command": "select_lines", "args": {"forward": true}, "caption": "次行にカレット追加" },
+            { "command": "select_lines", "args": {"forward": false}, "caption": "前行にキャレット追加" },
+            { "command": "select_lines", "args": {"forward": true}, "caption": "次行にキャレット追加" },
             { "caption": "-" },
             {
                 "caption": "タブ選択",
